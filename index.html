@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wachstumswegweiser: Social Recruiting, Neukundengewinnung über Meta, KI-Agentur und Social Media Management für Unternehmen mit Wachstumsambition.">
+  <title>Wachstumswegweiser | Recruiting, Meta Leads & KI-Marketing</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080a12;
+      --bg2: #101729;
+      --ink: #f6f8ff;
+      --muted: #aeb8ce;
+      --soft: rgba(255,255,255,.08);
+      --soft2: rgba(255,255,255,.13);
+      --line: rgba(255,255,255,.14);
+      --card: rgba(16, 23, 41, .78);
+      --accent: #7c5cff;
+      --accent2: #16e0bd;
+      --accent3: #ffb86b;
+      --danger: #ff5f7e;
+      --shadow: 0 32px 100px rgba(0,0,0,.42);
+      --radius: 28px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --display: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f6f1e8;
+      --bg2: #fffaf0;
+      --ink: #171a21;
+      --muted: #626a76;
+      --soft: rgba(23,26,33,.06);
+      --soft2: rgba(23,26,33,.10);
+      --line: rgba(23,26,33,.13);
+      --card: rgba(255,255,255,.82);
+      --accent: #1f58ff;
+      --accent2: #0f9f8f;
+      --accent3: #e18728;
+      --danger: #d94b63;
+      --shadow: 0 28px 88px rgba(36,45,70,.16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 28%),
+        radial-gradient(circle at 84% 14%, color-mix(in srgb, var(--accent2) 28%, transparent), transparent 26%),
+        linear-gradient(180deg, var(--bg), var(--bg2) 58%, var(--bg));
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: blur(22px);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; font-weight: 900; letter-spacing: -.03em; }
+    .brand img { width: 44px; height: 44px; border-radius: 12px; }
+    .brand span { white-space: nowrap; }
+    .links { display: flex; gap: 18px; color: var(--muted); font-size: 14px; font-weight: 750; }
+    .links a:hover { color: var(--ink); }
+    .theme-toggle { display: inline-grid; grid-template-columns: 1fr 1fr; gap: 3px; border: 1px solid var(--line); padding: 4px; border-radius: 999px; background: var(--soft); }
+    .theme-toggle button { min-height: 38px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); padding: 8px 12px; font-weight: 850; cursor: pointer; }
+    .theme-toggle button.active { background: var(--ink); color: var(--bg); }
+
+    .hero { padding: 78px 0 64px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); gap: 54px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--accent2); font-size: 13px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 36px; height: 2px; background: var(--accent2); }
+    h1, h2, h3 { margin: 0; line-height: 1.02; text-wrap: balance; }
+    h1 { max-width: 840px; font-family: var(--display); font-size: clamp(48px, 6vw, 84px); letter-spacing: -.065em; }
+    .grad { background: linear-gradient(90deg, var(--accent2), var(--accent), var(--accent3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { max-width: 710px; margin: 24px 0 0; color: var(--muted); font-size: clamp(18px, 2vw, 22px); }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 14px 19px; border-radius: 999px; font-weight: 900; border: 1px solid var(--line); transition: transform .18s ease, background .18s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { border: 0; color: #061017; background: linear-gradient(135deg, var(--accent2), var(--accent3)); box-shadow: 0 20px 60px color-mix(in srgb, var(--accent2) 24%, transparent); }
+    .btn.secondary { background: var(--soft); color: var(--ink); }
+    .proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 28px; }
+    .proof div { border: 1px solid var(--line); background: var(--soft); border-radius: 18px; padding: 13px; color: var(--muted); font-size: 13px; font-weight: 750; }
+    .proof strong { display: block; color: var(--ink); font-size: 16px; margin-bottom: 3px; }
+    .hero-visual { position: relative; min-height: 620px; }
+    .portrait-card { position: absolute; right: 0; top: 0; width: min(450px, 86%); border: 1px solid var(--line); border-radius: 34px; overflow: hidden; background: var(--card); box-shadow: var(--shadow); }
+    .portrait-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: center top; }
+    .metric-panel { position: absolute; left: 0; bottom: 18px; width: min(390px, 78%); padding: 24px; border-radius: 28px; background: color-mix(in srgb, var(--card) 90%, transparent); border: 1px solid var(--line); backdrop-filter: blur(18px); box-shadow: var(--shadow); }
+    .metric-panel h3 { font-size: 25px; letter-spacing: -.03em; }
+    .signal { margin-top: 16px; display: grid; gap: 10px; }
+    .signal span { display: flex; justify-content: space-between; gap: 18px; color: var(--muted); font-size: 14px; }
+    .bar { height: 8px; border-radius: 999px; background: var(--soft2); overflow: hidden; margin-top: 5px; }
+    .bar i { display: block; height: 100%; width: var(--w); border-radius: inherit; background: linear-gradient(90deg, var(--accent2), var(--accent)); }
+
+    section { padding: 78px 0; }
+    .section-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 32px; align-items: end; margin-bottom: 28px; }
+    .kicker { margin: 0 0 12px; color: var(--accent2); font-size: 13px; font-weight: 950; text-transform: uppercase; letter-spacing: .1em; }
+    h2 { font-size: clamp(34px, 4.6vw, 62px); letter-spacing: -.055em; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 18px; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .service { min-height: 390px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: 0 20px 70px rgba(0,0,0,.12); overflow: hidden; position: relative; }
+    .service::before { content: attr(data-num); position: absolute; right: 18px; top: 12px; color: var(--soft2); font-size: 86px; line-height: 1; font-weight: 950; letter-spacing: -.08em; }
+    .service h3 { position: relative; font-size: 27px; letter-spacing: -.035em; }
+    .service p { position: relative; color: var(--muted); margin: 16px 0 0; }
+    .service ul { position: relative; list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; color: var(--muted); font-size: 14px; }
+    .service li { padding-left: 18px; position: relative; }
+    .service li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); }
+    .service img { margin-top: 20px; width: 100%; height: 130px; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); filter: saturate(1.02) contrast(1.02); }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .wide-card { border: 1px solid var(--line); border-radius: calc(var(--radius) + 8px); background: var(--card); overflow: hidden; box-shadow: var(--shadow); }
+    .wide-card img { width: 100%; height: 320px; object-fit: cover; }
+    .wide-copy { padding: 28px; }
+    .wide-copy h3 { font-size: 34px; letter-spacing: -.04em; }
+    .wide-copy p { color: var(--muted); margin: 14px 0 0; font-size: 17px; }
+
+    .process { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; counter-reset: step; }
+    .step { counter-increment: step; padding: 22px; border-radius: 24px; border: 1px solid var(--line); background: var(--soft); min-height: 190px; }
+    .step::before { content: counter(step); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: var(--bg); font-weight: 950; margin-bottom: 18px; }
+    .step h3 { font-size: 20px; letter-spacing: -.025em; }
+    .step p { margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+
+    .founder { display: grid; grid-template-columns: .8fr 1.2fr; gap: 34px; align-items: center; padding: 32px; border: 1px solid var(--line); border-radius: calc(var(--radius) + 10px); background: var(--card); box-shadow: var(--shadow); }
+    .founder img { border-radius: 28px; width: 100%; max-height: 520px; object-fit: cover; object-position: center top; }
+    .founder p { color: var(--muted); font-size: 18px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .tag { border: 1px solid var(--line); background: var(--soft); color: var(--muted); border-radius: 999px; padding: 8px 11px; font-size: 13px; font-weight: 850; }
+
+    .cta { padding: clamp(30px, 6vw, 58px); border-radius: calc(var(--radius) + 12px); color: #071016; background: linear-gradient(135deg, var(--accent2), var(--accent3)); display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center; box-shadow: var(--shadow); }
+    .cta h2 { color: #071016; }
+    .cta p { color: rgba(7,16,22,.78); font-size: 18px; }
+    .cta .btn { background: #071016; color: #fff; border: 0; justify-self: end; }
+    footer { padding: 34px 0 56px; color: var(--muted); font-size: 14px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+
+    @media (max-width: 1040px) {
+      .links { display: none; }
+      .hero-grid, .section-head, .split, .founder, .cta { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .process { grid-template-columns: 1fr 1fr; }
+      .hero-visual { min-height: 580px; max-width: 620px; width: 100%; margin: 0 auto; }
+      .cta .btn { justify-self: start; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .topbar { position: static; }
+      .nav { min-height: 64px; gap: 10px; }
+      .brand img { width: 36px; height: 36px; }
+      .brand span { font-size: 14px; max-width: 138px; overflow: hidden; text-overflow: ellipsis; }
+      .theme-toggle button { min-height: 36px; padding: 7px 9px; font-size: 12px; }
+      .hero { padding: 34px 0 44px; }
+      .hero-grid { gap: 30px; }
+      .eyebrow { font-size: 11px; letter-spacing: .07em; margin-bottom: 13px; }
+      .eyebrow::before { width: 22px; }
+      h1 { font-size: clamp(34px, 10.5vw, 46px); letter-spacing: -.055em; max-width: 100%; overflow-wrap: anywhere; }
+      h2 { font-size: clamp(30px, 9vw, 42px); }
+      .lead { font-size: 16.5px; margin-top: 17px; }
+      .actions .btn { width: 100%; }
+      .proof { grid-template-columns: 1fr 1fr; margin-top: 20px; }
+      .hero-visual { min-height: 438px; }
+      .portrait-card { position: relative; width: 100%; border-radius: 24px; }
+      .portrait-card img { height: 286px; object-fit: cover; object-position: center top; }
+      .metric-panel { position: relative; left: auto; bottom: auto; width: calc(100% - 24px); margin: -44px auto 0; padding: 18px; border-radius: 22px; }
+      .metric-panel h3 { font-size: 21px; }
+      section { padding: 52px 0; }
+      .section-head { gap: 14px; margin-bottom: 20px; }
+      .section-head p { font-size: 16px; }
+      .service-grid, .process { grid-template-columns: 1fr; }
+      .service { min-height: auto; padding: 22px; border-radius: 22px; }
+      .service h3 { font-size: 25px; }
+      .service img { height: 150px; }
+      .wide-card { border-radius: 24px; }
+      .wide-card img { height: 220px; }
+      .wide-copy { padding: 22px; }
+      .wide-copy h3 { font-size: 27px; }
+      .founder { padding: 18px; border-radius: 24px; }
+      .founder img { border-radius: 18px; max-height: 340px; }
+      .founder p { font-size: 16px; }
+      .cta { border-radius: 24px; padding: 26px 20px; }
+      .cta .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Wachstumswegweiser Startseite"><img src="assets/logo-mark.png" alt=""><span>Wachstumswegweiser</span></a>
+      <nav class="links" aria-label="Navigation">
+        <a href="#leistungen">Leistungen</a><a href="#system">System</a><a href="#prozess">Ablauf</a><a href="#gruenderin">Gründerin</a>
+      </nav>
+      <div class="theme-toggle" aria-label="Farbschema wechseln"><button class="active" data-theme-set="dark">Neon</button><button data-theme-set="light">Klar</button></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Social Growth Agency</p>
+          <h1>Mehr Bewerber, mehr Kunden und mehr Sichtbarkeit — mit <span class="grad">Meta, Content & KI.</span></h1>
+          <p class="lead">Der Wachstumswegweiser wird zur modernen Wachstumsagentur für Unternehmen, die offene Stellen schneller besetzen, Neukunden planbarer gewinnen und Social Media nicht länger dem Zufall überlassen wollen.</p>
+          <div class="actions">
+            <a class="btn primary" href="#kontakt">Kostenlose Potenzialanalyse</a>
+            <a class="btn secondary" href="#leistungen">Leistungen ansehen</a>
+          </div>
+          <div class="proof" aria-label="Fokusbereiche">
+            <div><strong>Recruiting</strong>Fachkräfte über Social Ads</div>
+            <div><strong>Meta Leads</strong>Neukunden über Funnel</div>
+            <div><strong>KI-Systeme</strong>Automatisierung & Vorqualifizierung</div>
+            <div><strong>Social</strong>Content, Präsenz & Marke</div>
+          </div>
+        </div>
+        <aside class="hero-visual" aria-label="Cassandra Heinrich und Wachstumssystem">
+          <div class="portrait-card"><img src="assets/cassandra-portrait.png" alt="Cassandra Heinrich, Gründerin des Wachstumswegweisers"></div>
+          <div class="metric-panel">
+            <h3>Aus Social Media wird ein messbarer Wachstumskanal.</h3>
+            <div class="signal"><span>Talente erreichen <b>92%</b></span><div class="bar"><i style="--w:92%"></i></div></div>
+            <div class="signal"><span>Leads vorqualifizieren <b>81%</b></span><div class="bar"><i style="--w:81%"></i></div></div>
+            <div class="signal"><span>Marke sichtbar machen <b>88%</b></span><div class="bar"><i style="--w:88%"></i></div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="kicker">Vier Kernbereiche</p><h2>Ein System für Recruiting, Neukunden und digitale Sichtbarkeit.</h2></div>
+          <p>Die Inhalte der Referenzseite bleiben erhalten, werden aber klarer strukturiert: Social Recruiting und Neukundengewinnung stehen im Zentrum, ergänzt durch KI-gestützte Prozesse und Social Media Management.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service" data-num="01"><div><h3>Social Recruiting</h3><p>Offene Stellen werden nicht nur ausgeschrieben, sondern aktiv über Facebook, Instagram und passende Zielgruppenansprache sichtbar gemacht.</p><ul><li>Jobkampagnen auf Social Media</li><li>Smartphone-freundliche Bewerbung</li><li>Arbeitgebermarke und Recruiting-Content</li></ul></div><img src="assets/online-interview.webp" alt="Online-Interview als Symbol für digitales Recruiting"></article>
+          <article class="service" data-num="02"><div><h3>Neukundengewinnung über Meta</h3><p>Strategische Kampagnen führen potenzielle Kunden aus der Aufmerksamkeit in konkrete Anfragen — mit klarer Botschaft, Angebot und Funnel.</p><ul><li>Meta Ads für lokale und regionale Zielgruppen</li><li>Landingpages und Lead-Strecken</li><li>Kampagnenmaterialien für Conversion</li></ul></div><img src="assets/customer-growth.png" alt="Wachstum durch Kundengewinnung"></article>
+          <article class="service" data-num="03"><div><h3>KI- & AI-Agentur</h3><p>KI unterstützt dort, wo Prozesse Zeit kosten: Vorqualifizierung, Lead-Sortierung, Antworten, Auswertungen und strukturierte Übergaben.</p><ul><li>Digitale Vorqualifizierung</li><li>Automatisierte Kurzprofile</li><li>KI-Assistenten für Marketing und Vertrieb</li></ul></div><img src="assets/candidate-funnel.png" alt="Vorqualifizierung und Auswahlprozess"></article>
+          <article class="service" data-num="04"><div><h3>Social Media Management</h3><p>Regelmäßiger Content, klare Markenidentität und sichtbare Präsenz sorgen dafür, dass Unternehmen in den Köpfen der Zielgruppe bleiben.</p><ul><li>Contentplanung und Posting</li><li>Foto- und Videoproduktion</li><li>Markenaufbau und Omnipräsenz</li></ul></div><img src="assets/brand-growth.png" alt="Markenwachstum über Social Media"></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="system">
+      <div class="wrap split">
+        <article class="wide-card"><img src="assets/team-meeting.png" alt="Kundenmeeting und Beratungssituation"><div class="wide-copy"><p class="kicker">Situation: Kundenmeeting</p><h3>Erst verstehen, dann sichtbar machen.</h3><p>Im ersten Schritt werden Zielgruppe, Engpass und Angebot klar herausgearbeitet: Welche Stellen müssen besetzt werden? Welche Kunden sollen gewonnen werden? Was macht das Unternehmen attraktiv?</p></div></article>
+        <article class="wide-card"><img src="assets/agreement.png" alt="Erfolgreiche Einigung und passender Match"><div class="wide-copy"><p class="kicker">Situation: Abschluss</p><h3>Aus Aufmerksamkeit werden passende Gespräche.</h3><p>Die Kampagnen sollen nicht nur Reichweite erzeugen, sondern qualifizierte Bewerbungen, sinnvolle Erstgespräche und echte Anfragen bringen.</p></div></article>
+      </div>
+    </section>
+
+    <section id="prozess">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="kicker">Arbeitsweise</p><h2>Von unsichtbar zu planbar sichtbar.</h2></div>
+          <p>Ein klarer Prozess ersetzt Bauchgefühl: Positionierung, Kampagne, Vorqualifizierung, Content und Optimierung greifen ineinander.</p>
+        </div>
+        <div class="process">
+          <div class="step"><h3>Analyse</h3><p>Engpass, Zielgruppe, Angebot und bisherige Sichtbarkeit werden sortiert.</p></div>
+          <div class="step"><h3>Strategie</h3><p>Für Recruiting, Leads oder Social Media entsteht ein klares Kampagnensystem.</p></div>
+          <div class="step"><h3>Produktion</h3><p>Texte, Creatives, Foto-/Videocontent und Landingpages werden vorbereitet.</p></div>
+          <div class="step"><h3>Schaltung</h3><p>Meta-Kampagnen und Social-Media-Strecken gehen live und sammeln Daten.</p></div>
+          <div class="step"><h3>Optimierung</h3><p>Leads, Bewerbungen und Inhalte werden ausgewertet und verbessert.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gruenderin">
+      <div class="wrap founder">
+        <img src="assets/founder-crop.jpg" alt="Cassandra Heinrich, Gründerin">
+        <div><p class="kicker">Die Gründerin</p><h2>Cassandra Heinrich verbindet Recruiting, Marketing und Unternehmertum.</h2><p>Der Wachstumswegweiser positioniert sich als Partner für nachhaltiges Wachstum: Unternehmen sollen schneller die richtigen Fachkräfte finden, neue Kunden gewinnen und eine starke digitale Marke aufbauen.</p><p>Die neue Website macht diese Rolle moderner und klarer: weniger klassische Dienstleistungsübersicht, mehr Growth-System für Bewerber, Kunden und Social-Media-Präsenz.</p><div class="tags"><span class="tag">Social Recruiting</span><span class="tag">Meta Ads</span><span class="tag">KI-Prozesse</span><span class="tag">Content</span><span class="tag">Marke</span></div></div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="wrap cta">
+        <div><p class="kicker" style="color:rgba(7,16,22,.7)">Nächster Schritt</p><h2>Kostenlose Potenzialanalyse für Recruiting, Neukunden oder Social Media.</h2><p>In einem kurzen Gespräch wird geklärt, wo aktuell Wachstum verloren geht — und welcher Kanal zuerst den größten Hebel bietet.</p></div>
+        <a class="btn" href="mailto:kontakt@wachstumswegweiser.de">Angebot erhalten</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>© Wachstumswegweiser · Testdesign</span><span>Social Recruiting · Meta Leads · KI-Agentur · Social Media Management</span></div></footer>
+
+  <script>
+    const buttons = document.querySelectorAll('[data-theme-set]');
+    function setTheme(theme) {
+      document.body.dataset.theme = theme;
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.themeSet === theme));
+      localStorage.setItem('kassandraTheme', theme);
+    }
+    buttons.forEach(btn => btn.addEventListener('click', () => setTheme(btn.dataset.themeSet)));
+    const saved = localStorage.getItem('kassandraTheme');
+    if (saved === 'light') setTheme('light');
+  </script>
+</body>
+</html>
